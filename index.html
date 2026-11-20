@@ -361,7 +361,12 @@ const DEFS = [
  "A silly illustration from a wedding. we thought that the illustrator was really goung to draw us instead we got this no face, no identity creepy illustration (instead of the usual magnets)",
  "I don't go to weddings, but this was family. and Lennys first wedding. So it had some importance, It was her cousins wedding, she really loved her, but the cousin kind of disapeared because of a family fight"
 ];
-const OBJECTS = DEFS.map((def,i)=>({ n:i+1, img:`img/objects/obj_${String(i+1).padStart(2,'0')}.jpg`, def }));
+const OBJECTS = DEFS.map((def,i)=>({
+  n:i+1,
+  name:`fridge_${String(i+1).padStart(2,'0')}`,
+  img:`img/objects/obj_${String(i+1).padStart(2,'0')}.jpg`,
+  def
+}));
 
 /* 04 · Generated output.
    GEN_SHEETS: the images ChatGPT returned, exactly as returned, in the order supplied.
@@ -455,7 +460,7 @@ function render(){
   const L=list();
   if(!L.length){ grid.innerHTML=missing('Generated images (stage 04)'); return; }
   L.forEach((o,i)=>{
-    const code = (current==='orig' ? 'F' : 'G')+pad(o.n);
+    const code = current==='orig' ? o.name : 'G'+pad(o.n);
     const definition = current==='orig' ? `<div class="def">${esc(o.def)}</div>` : '';
     const c=el(`<button class="card"><div class="img"><img loading="lazy" src="${o.img}" alt="${code}"></div><div class="cap"><b>${code}</b><span>${current==='orig'?'original':'from image '+o.sheet}</span></div>${definition}</button>`);
     c.onclick=()=>open(i);
@@ -476,7 +481,7 @@ function open(i){
   const L=list(); idx=i; const o=L[i];
   document.getElementById('lb-pic').innerHTML = `<img src="${o.img}" alt="">`;
   document.getElementById('lb-set').textContent = current==='orig'?'Original fridge':`Generated fridge · cut out of returned image ${o.sheet} of ${GEN_SHEETS.length}`;
-  document.getElementById('lb-n').textContent = (current==='orig' ? 'F' : 'G')+pad(o.n);
+  document.getElementById('lb-n').textContent = current==='orig' ? o.name : 'G'+pad(o.n);
   const d=document.getElementById('lb-def');
   d.textContent = o.def || '';
   d.previousElementSibling.style.display = current==='orig'?'':'none';
