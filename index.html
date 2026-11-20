@@ -25,7 +25,7 @@
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
   .label{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  section{border-top:1px solid var(--ink)}
+  section{border-top:0}
   .sec{padding:clamp(56px,8vw,112px) 0}
   .sec-head{display:grid;grid-template-columns:220px 1fr;gap:24px;margin-bottom:48px}
   .sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.02em}
@@ -93,9 +93,9 @@
   .btn:hover{background:var(--ink);color:var(--bg)}
 
   /* response */
-  .qa{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
-  .qa article{background:var(--bg);padding:28px}
-  .qa .n{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .qa{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:transparent;border:0}
+  .qa article{background:#f0a5b6;color:rgba(17,17,17,.9);padding:28px}
+  .qa .n{font-family:var(--mono);font-size:12px;color:rgba(17,17,17,.75)}
   .qa h3{font-family:var(--display);font-weight:500;font-size:21px;line-height:1.2;letter-spacing:-.01em;margin:10px 0 16px}
   .qa p{font-size:16px}
   .qa .answer{display:inline-block;background:var(--accent);padding:0 6px;font-family:var(--display);font-weight:500}
