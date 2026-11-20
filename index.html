@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Woman (Corpus: The Fridge) — Yael Shinkar</title>
+<title>A Woman (Corpus: The Fridge) - Yael Shinkar</title>
 <meta name="description" content="fridge_corpus: 45 objects from a fridge door, a person inferred by ChatGPT, a fridge reconstructed from that person. A response to Trevor Paglen's Adversarially Evolved Hallucinations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     --display:"Inter Tight",system-ui,sans-serif;
     --body:"Inter",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-    --wrap:1600px; --pad:clamp(12px,2vw,32px);
+    --wrap:1280px; --pad:clamp(20px,4vw,48px);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -120,6 +120,7 @@
   .card:hover .img img{transform:scale(1.05)}
   .card .cap{font-family:var(--mono);font-size:11px;padding:8px 10px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted)}
   .card .cap b{color:var(--ink);font-weight:500}
+  .card .def{font-family:"Times New Roman",Times,serif;font-size:13px;font-style:italic;line-height:1.35;padding:8px 10px;border-top:1px solid var(--line);color:var(--ink)}
   .card .ph{aspect-ratio:3/4}
 
   /* transcripts */
@@ -241,82 +242,15 @@
   </div>
 </section>
 
-
-<!-- ===================== PART B onward ===================== -->
-<style>
-  .chap{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
-  .chap-tag{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#f0a5b6;color:#111;padding:5px 8px;margin-bottom:22px}
-  .chap h2{font-family:"Times New Roman",Times,serif;font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.05;letter-spacing:-.01em;margin-bottom:18px}
-  .chap .intro{font-family:"Times New Roman",Times,serif;font-size:22px;line-height:1.5;max-width:46ch;color:#333;margin-bottom:40px}
-  .serif{font-family:"Times New Roman",Times,serif;font-size:24px;line-height:1.5}
-  .serif p+p{margin-top:1em}
-  .measure{max-width:900px;margin:0 auto}
-  .titleblock{text-align:left;margin-bottom:56px}
-  .titleblock h2{font-family:"Times New Roman",Times,serif;font-weight:400;font-size:clamp(44px,6.5vw,88px);line-height:.98;letter-spacing:-.01em;margin:0}
-  .titleblock .sub{font-family:"Times New Roman",Times,serif;font-style:italic;font-size:clamp(22px,2.6vw,32px);margin-top:14px}
-  .titleblock .tagline{font-family:var(--mono);font-size:13px;margin-top:28px;color:#333}
-  .titleblock .question{font-family:"Times New Roman",Times,serif;font-size:clamp(24px,2.6vw,32px);margin-top:20px}
-  .pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink);margin-top:64px}
-  .pair figure{background:var(--bg)}
-  .pair img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .pair figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);padding:12px 14px}
-  .gridbar{display:flex;gap:28px;margin-bottom:20px;border-bottom:1px solid var(--line)}
-  .gridbar button{font-family:var(--display);font-size:17px;padding:0 0 12px;margin-bottom:-1px;color:var(--muted);border-bottom:2px solid transparent}
-  .gridbar button[aria-selected="true"]{color:var(--ink);border-color:var(--ink)}
-  .traits{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;margin:28px 0}
-  .traits div{outline:1px solid var(--ink);background:var(--tile);padding:18px 20px;font-family:"Times New Roman",Times,serif;font-size:19px;line-height:1.4}
-  .traits b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;background:#f0a5b6;width:max-content;padding:2px 6px}
-  mark{background:#f0a5b6;color:inherit;padding:0 .1em}
-  .portraits{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink)}
-  .portraits>div{background:var(--tile);padding:24px}
-  .portraits h3{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;color:var(--muted)}
-  .portraits ul{list-style:none;font-family:"Times New Roman",Times,serif;font-size:19px;line-height:1.45}
-  .portraits li+li{margin-top:8px}
-  @media(max-width:800px){.portraits,.pair{grid-template-columns:1fr}}
-  .mech-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
-  .mech-tabs button{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--ink);padding:8px 14px}
-  .mech-tabs button[aria-selected="true"]{background:#f0a5b6}
-  .mech{border:1px solid var(--ink);background:var(--tile);padding:clamp(24px,4vw,44px)}
-  .mech .q{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-  .mech p{font-family:"Times New Roman",Times,serif;font-size:clamp(22px,2.4vw,30px);line-height:1.35}
-  .faces{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);margin-top:40px}
-  .faces .row{display:grid;gap:1px;margin-top:12px}
-  #faces-orig{grid-template-columns:repeat(4,1fr)} #faces-gen{grid-template-columns:repeat(3,1fr)}
-  .faces .row img{outline:1px solid var(--line)}
-  .faces .row img{background:#fff;width:100%;aspect-ratio:3/4;object-fit:contain;padding:8%}
-  .faces h3{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-  .faces h3 span{display:block;color:var(--muted);font-weight:400;margin-top:4px}
-  @media(max-width:800px){.faces{grid-template-columns:1fr}}
-  .bigline{font-family:"Times New Roman",Times,serif;font-style:italic;font-size:clamp(30px,4vw,52px);line-height:1.1;max-width:24ch}
-  .smallnote{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px}
-  .method{list-style:none;counter-reset:m;border-top:1px solid var(--line)}
-  .method li{counter-increment:m;display:grid;grid-template-columns:48px 1fr;padding:14px 0;border-bottom:1px solid var(--line);font-family:"Times New Roman",Times,serif;font-size:20px;line-height:1.45}
-  .method li::before{content:counter(m,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:6px}
-  .method .missing{font-size:12px}
-  details.evidence{border:1px solid var(--ink);margin-top:40px}
-  details.evidence summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:#f0a5b6}
-  details.evidence summary::-webkit-details-marker{display:none}
-  details.evidence summary::after{content:" +"} details.evidence[open] summary::after{content:" –"}
-  details.evidence .inner{padding:0 20px}
-  .final h2{font-family:"Times New Roman",Times,serif;font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.05;margin:16px 0 32px}
-  .final .serif{color:#eee;max-width:42ch}
-  .final .last{font-style:italic;font-size:clamp(26px,3vw,38px);line-height:1.25;margin-top:1.2em;color:#fff}
-</style>
-
-<!-- PART B -->
+<!-- PART B: project -->
 <section id="project">
   <div class="wrap sec">
-    <div class="sec-head"><div class="label">Part B · Artistic response</div><div></div></div>
-    <div class="measure">
-      <div class="titleblock">
-        <div class="chap-tag">An experiment in machine-generated memory</div>
-        <h2>fridge_corpus:<br>A Synthetic Autobiography</h2>
-        <p class="sub">From lived memory to statistically plausible identity</p>
-        <p class="tagline">45 real objects. One inferred identity. 45 synthetic objects. A reconstructed life.</p>
-        <p class="question">What survives when personal memory becomes a machine-generated representation?</p>
-      </div>
-      <div class="serif">
-        <p>I photographed 45 objects from my refrigerator, creating a personal archive of family photographs, drawings, souvenirs, reminders, and everyday objects. I deliberately concealed every identifiable face and wrote a personal description of each object, including its history, emotional associations, and significance—or lack thereof.</p>
+    <div class="sec-head"><div class="label">Part B · Project</div><div></div></div>
+    <div class="two">
+      <div class="label">fridge_corpus</div>
+      <div class="body" style="font-family:'Times New Roman',Times,serif;font-size:24px;line-height:1.5">
+        <h2 style="font-size:clamp(32px,4vw,48px);line-height:1.05;margin-bottom:32px">fridge_corpus:</h2>
+        <p>I photographed 45 objects from my refrigerator, creating a personal archive of family photographs, drawings, souvenirs, reminders, and everyday objects. I deliberately concealed every identifiable face and wrote a personal description of each object, including its history, emotional associations, and significance - lack thereof.</p>
         <p>I uploaded the images and descriptions to ChatGPT and asked it to reconstruct the identity of the person behind the collection.</p>
         <p>In a new conversation, I used this reconstructed identity as the basis for generating 45 synthetic refrigerator objects through separate requests. I then introduced the generated images into another conversation and asked ChatGPT to describe their supposed owner.</p>
         <p>The resulting identity remained recognizable but became increasingly generic: a creative, sentimental, family-oriented woman represented through familiar symbols of motherhood, art, travel, and domestic life.</p>
@@ -325,137 +259,38 @@
         <p>The experiment explores how generative AI transforms personal experience into culturally recognizable representations. What survives is not necessarily the memory itself, but a plausible image of what that memory is expected to look like.</p>
       </div>
     </div>
-    <div class="pair">
-      <figure><img loading="lazy" src="hero/fridge-original.jpg" alt="Photograph of the fridge with the 45 original objects"><figcaption>The lived archive · photograph</figcaption></figure>
-      <figure><img loading="lazy" src="hero/fridge-generated.jpg" alt="The same photograph with the 45 generated objects placed on the fridge"><figcaption>The synthetic archive · the 45 generated objects placed onto the same photograph (digital composite)</figcaption></figure>
-    </div>
   </div>
 </section>
 
-<!-- 01 THE SOURCE -->
-<section id="collection" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">01 / The source</div>
-    <h2>The lived archive</h2>
-    <p class="intro">45 real objects, with their original personal histories and all identifiable faces concealed with an emoji. Click an object to read its story.</p>
-    <div class="grid" id="grid-orig"></div>
+<!-- COLLECTION -->
+<section id="collection">
+  <div class="wrap sec">
+    <div class="sec-head"><div class="label">Collection</div><h2>Objects</h2></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-set="orig">Original fridge <span class="count">45</span></button>
+      <button role="tab" aria-selected="false" data-set="gen">Generated fridge <span class="count" id="gen-tab-count"></span></button>
+    </div>
+    <p class="status" id="grid-status"></p>
+    <div class="grid" id="grid"></div>
   </div>
 </section>
 
-<!-- 02 FIRST PORTRAIT -->
-<section id="portrait-1" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">02 / The first portrait</div>
-    <h2>The model’s first interpretation of the owner</h2>
-    <p class="intro">From the 45 photographs and their personal narratives. Prompt: “Can you describe the person behind this corpus called: fridge_corpus”</p>
-    <div class="traits" id="traits"></div>
-    <div class="bubble" style="max-width:none"><span class="label">ChatGPT · full response</span><div id="portrait-1-text"></div></div>
+<!-- CONVERSATIONS -->
+<section id="conversations">
+  <div class="wrap sec">
+    <div class="sec-head"><div class="label">Conversations</div><h2>One conversation</h2></div>
+
+    <div id="stages"></div>
   </div>
 </section>
 
-<!-- 03 SYNTHETIC ARCHIVE -->
-<section id="synthetic" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">03 / The synthetic archive</div>
-    <h2>45 generated objects</h2>
-    <p class="intro">The same grid, the same dimensions. Switch between the two archives to compare them position by position. The positions are not matches: the generated objects are a new collection, not replacements for specific originals.</p>
-    <div class="gridbar" role="tablist">
-      <button role="tab" aria-selected="true" data-set="gen">Synthetic archive <span class="count">45</span></button>
-      <button role="tab" aria-selected="false" data-set="orig">Original archive <span class="count">45</span></button>
-    </div>
-    <div class="grid" id="grid-compare"></div>
-  </div>
-</section>
-
-<!-- 04 SECOND PORTRAIT -->
-<section id="portrait-2" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">04 / The second portrait</div>
-    <h2>Two portraits, side by side</h2>
-    <p class="intro">The identity reconstructed from the synthetic archive, displayed alongside the first portrait.</p>
-    <div class="portraits">
-      <div><h3>First portrait · from the lived archive</h3><ul id="p1-list"></ul></div>
-      <div><h3>Second portrait · from the synthetic archive</h3><div id="p2-slot"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 DISCREPANCY -->
-<section id="discrepancy" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">05 / The discrepancy</div>
-    <h2>Loss, standardization, fabrication</h2>
-    <div class="mech-tabs" role="tablist">
-      <button role="tab" aria-selected="true" data-m="0">Loss</button>
-      <button role="tab" aria-selected="false" data-m="1">Standardization</button>
-      <button role="tab" aria-selected="false" data-m="2">Fabrication</button>
-    </div>
-    <div class="mech" id="mech"></div>
-    <div class="serif measure" style="margin-top:48px">
-      <p>These processes reinforce one another. When a specific memory disappears, a culturally familiar representation can take its place. Once that representation is rendered as a photograph or personal object, it acquires the appearance of documentary evidence.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FACES -->
-<section id="faces" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">The invented faces</div>
-    <p class="bigline">I removed the faces to protect real identities. The machine introduced new faces to make the invented memories look real.</p>
-    <p class="smallnote">An observed result, not a claim about why the model generated faces.</p>
-    <div class="faces">
-      <div><h3>Original archive<span>Identity deliberately concealed</span></h3><div class="row" id="faces-orig"></div></div>
-      <div><h3>Synthetic archive<span>Identity visually fabricated</span></h3><div class="row" id="faces-gen"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 06 CRITICAL REFLECTION -->
-<section id="reflection" class="chap">
-  <div class="wrap">
-    <div class="chap-tag">06 / Critical reflection</div>
-    <h2>How it responds to Paglen</h2>
-    <div class="serif measure" style="margin-top:32px">
-      <p>While Trevor Paglen exposes the ideological structures of machine-learning datasets through disturbing and unfamiliar images, fridge_corpus reveals similar mechanisms through familiar, comforting imagery.</p>
-      <p>By repeatedly translating a personal archive into an inferred identity, synthetic objects, and a reconstructed biography, the work examines how lived experience becomes a collection of recognizable cultural stereotypes.</p>
-      <p>Where Paglen's images appear visibly artificial, mine are unsettling precisely because they appear ordinary, intimate, and believable.</p>
-    </div>
-
-    <div class="measure" style="margin-top:72px">
-      <div class="label" style="margin-bottom:16px">Methodological note</div>
-      <ol class="method">
-        <li>The original archive contains 45 photographed objects, each accompanied by my firsthand account.</li>
-        <li>All identifiable faces in the source photographs were concealed with an emoji.</li>
-        <li>ChatGPT inferred a portrait from both images and narratives.</li>
-        <li>In the same conversation, the request “now generate 10 new objects or images for this person to put on its fridge” was sent five times. The five returned images were cut into 45 separate objects.</li>
-        <li><div class="missing"><b>Not yet supplied</b>The interpretation of the generated collection: the prompt, the conversation it took place in, and ChatGPT’s full response.</div></li>
-        <li>The experiment used existing AI models; it did not train a new model or directly measure latent-space embeddings.</li>
-        <li>The photograph of the synthetic fridge is a digital composite: the generated objects were placed onto the original photograph by hand.</li>
-      </ol>
-    </div>
-
-    <details class="evidence" id="conversations">
-      <summary>Exact prompts and outputs</summary>
-      <div class="inner" id="stages"></div>
-    </details>
-  </div>
-</section>
-
-<!-- CLOSING -->
-<section class="closing final" id="closing">
+<!-- CLOSING (replaces newsletter) -->
+<section class="closing" id="closing">
   <div class="bgm" id="bgm" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="label">Conclusion</div>
-    <h2>What Does the Machine Remember?</h2>
-    <div class="serif">
-      <p>The synthetic refrigerator is not an empty archive. It contains recognizable images of family, intimacy, creativity, and everyday life. It appears to belong to someone.</p>
-      <p>Yet the relationships it represents have no shared history. The souvenirs refer to journeys that never happened. The faces belong to people who do not exist.</p>
-      <p>The original refrigerator was not a coherent autobiography. It was an accumulation of objects whose meanings were sometimes contradictory, sometimes deeply personal, and sometimes entirely absent.</p>
-      <p>Through repeated machine interpretation and generation, this irregular archive became a more coherent representation of a person.</p>
-      <p>The machine preserved a recognizable identity while losing much of what made that identity particular.</p>
-      <p class="last">The result is not a memory of my life, but an image of what a life like mine is expected to look like.</p>
-    </div>
-    <p class="q" style="margin-top:72px">When the model describes the person behind the second fridge, what remains of <em>the person who assembled the first?</em></p>
+    <div class="label">How the project responds to Paglen</div>
+    <p class="resp">In response to Paglen’s investigation of curated datasets and machine-generated images, I introduce a collection whose personal meanings I can place alongside the machine’s interpretations. Rather than training a model, I use an existing system to move from objects to an inferred person and back to objects. This shifts the emphasis toward the distance between my own definitions and the identity the model constructs from them.</p>
+    <p class="q">When the model describes the person behind the second fridge, what remains of <em>the person who assembled the first?</em></p>
   </div>
 </section>
 
@@ -480,10 +315,9 @@
   </div>
 </dialog>
 
-
 <script>
 /* =====================================================================
-   DATA — edit here. Nothing below this block needs changing.
+   DATA - edit here. Nothing below this block needs changing.
    ===================================================================== */
 
 /* 01–02 · Original collection. def = exact personal definition ("My Take" column of Corpus_The_Fridge.xlsx). */
@@ -556,7 +390,7 @@ const STAGES = [
     expects:["Exact prompt submitted with the original images and personal definitions","Complete first description written by ChatGPT"],
     messages:[
       { type:"prompt", text:"Can you describe the person behind this corpus called: fridge_corpus" },
-      { type:"response", text:"The Person Behind fridge_corpus\nA portrait reconstructed from 45 objects and their personal narratives.\n\nThe person behind fridge_corpus is a woman who lives surrounded by objects that tell stories, although she doesn't necessarily consider herself a collector. Her refrigerator is an accidental archive of family life, friendships, artistic encounters, everyday frustrations, and relationships that have changed over time.\n\nShe is a mother, a partner, a creative professional, and someone who seems deeply attentive to the emotional significance of ordinary things. Yet she is also practical, occasionally impatient, self-critical, and capable of keeping objects she actively dislikes.\n\nThe most revealing characteristic of this collection is that the emotional importance of an object has very little to do with its appearance, monetary value, or even whether she likes it.\n\n1. A mother who sees her daughter as an individual\nLenny is at the emotional center of the collection.\n\nHer drawings are not simply childhood memorabilia. Her mother sees them as genuine works of art and already imagines her daughter becoming an artist like her father, Adi.\n\nShe also carefully observes Lenny's relationships: her friendship with Maya, her connection with her cousins Dori and Matan, and the people who have entered and disappeared from her life.\n\nThere is a particular sensitivity to the fact that Lenny is an only child. Her mother and father have deliberately chosen not to have more children, but they place considerable emotional importance on the cousins who function almost like brothers.\n\nShe appears to be a mother who wants her daughter to grow up surrounded by creativity, affection, and meaningful relationships.\n\nAt the same time, she seems aware that she cannot control which relationships will last.\n\n2. Someone who experiences relationships through their changes\nA recurring theme in the collection is the distance between how relationships once were and how they are now.\n\nThe photograph of Lenny and Maya represents more than a childhood friendship. It recalls a period when two families lived in neighboring buildings, when the mothers were close friends, and when their daughters were inseparable.\n\nThe families moved. The friendship survived, but its intensity changed.\n\nSimilarly, the photograph from Lenny's first wedding carries the memory of a beloved cousin who later became distant because of a family conflict.\n\nThese objects suggest a person who is particularly sensitive to relationships that haven't necessarily ended but have become less intimate.\n\nShe seems to preserve not only people but also earlier versions of relationships.\n\nThere is nostalgia here, but it isn't entirely sentimental. She recognizes that things change, sometimes disappointingly, and doesn't try to disguise that.\n\n3. Art is part of everyday life, not a separate cultural activity\nArt appears repeatedly throughout the corpus.\n\nThere are drawings by Adi and Lenny, photographs from gallery visits, and a David Hockney magnet purchased in London.\n\nThe owner distinguishes sharply between objects she considers artistically meaningful and objects she finds visually unsuccessful.\n\nFor example, she describes a wedding illustration of her family as creepy and disappointing because the figures have no recognizable faces or identities.\n\nIn contrast, she speaks enthusiastically about Lenny's abstract drawing, recognizing artistic value in something that others might dismiss as a child's scribbles.\n\nThis suggests someone with strong visual opinions who values individuality, authenticity, and expressive qualities.\n\nHer refrigerator functions partly as a domestic exhibition space, but one without conventional curatorial consistency. Children's artwork, museum souvenirs, kitsch magnets, and anonymous functional objects coexist.\n\nShe has aesthetic standards, but she does not require her surroundings to conform to them.\n\n4. A practical person living with imperfect systems\nSome objects are there for purely functional reasons.\n\nThe yellow shopping reminder exists because Adi repeatedly forgets what to buy. The note was supposed to solve the problem, but apparently it hasn't.\n\nSeveral floral magnets are described in almost identical terms:\n\n\"No meaning, can't remember where I got them. Don't like them but they do the job.\"\n\nThis repetition is revealing.\n\nNot every object deserves a story. Not every possession needs to express identity. Sometimes an ugly magnet is simply useful.\n\nThe owner seems comfortable acknowledging the gap between her aesthetic preferences and the realities of domestic life.\n\nThere is also humor in the way she describes everyday frustrations, particularly those involving her partner.\n\nRather than presenting an idealized family, the collection reveals the minor irritations and compromises of living together.\n\n5. Someone who values gestures more than gifts\nThe handmade textile created by Lilach carries particular emotional weight.\n\nThe owner describes Lilach as her favorite person, someone who continually thinks of the family and makes things for them.\n\nWhat matters is not the object's material value but the attention and affection behind it.\n\nInterestingly, the owner describes herself as someone who is not good at buying gifts.\n\nWhen she traveled alone to London, she struggled to find something for Adi and eventually bought him a single David Hockney magnet. She felt guilty about the modest gift, even though it reflected a genuine shared interest.\n\nThere is an interesting contrast here: she deeply appreciates being thought of by others, but feels uncertain about how to express that same care through conventional gift-giving.\n\nShe may be more comfortable communicating affection through shared experiences, memories, and attention than through purchased objects.\n\n6. An attachment to memory, but not necessarily to things\nThe collection contains objects with very different levels of emotional importance.\n\nSome are irreplaceable personal records. Others were found in a discarded box, purchased cheaply, or kept simply because they were useful.\n\nThe owner does not attempt to invent sentimental meaning where none exists.\n\nThis is important because it challenges the assumption that every object in a personal archive represents something significant about its owner.\n\nSome objects tell stories about love, loss, identity, and belonging.\n\nOthers tell us only that a refrigerator needs magnets.\n\nYet their coexistence is itself meaningful. It suggests that the owner doesn't carefully curate her domestic environment into a coherent representation of herself.\n\nInstead, the refrigerator accumulates the traces of everyday life.\n\n7. A person with a sense of humor and a critical eye\nThe tone of the descriptions is striking.\n\nShe can move quickly between affection, disappointment, sarcasm, and nostalgia.\n\nShe calls a wedding illustration creepy, openly dislikes several magnets, laughs about a meaningless internet meme that delighted her daughter, and expresses frustration that her shopping reminders still don't work.\n\nShe is capable of being deeply sentimental without becoming overly reverential about every object.\n\nThis makes the collection feel less like a polished autobiography and more like a candid conversation.\n\nShe does not seem particularly interested in presenting herself as an ideal mother, partner, friend, or collector.\n\nInstead, she allows contradictory feelings to coexist.\n\n8. The central tension: holding on while life changes\nAcross the corpus, one recurring pattern emerges.\n\nThe owner wants to preserve moments, relationships, and experiences, but she also recognizes that life is constantly changing.\n\nHer daughter is growing up. Friendships become less intense. Family relationships are disrupted. Places once called home are left behind. Experiences that once seemed ordinary become significant in retrospect.\n\nThe refrigerator offers a way to keep fragments of these experiences physically present.\n\nBut it does not necessarily resolve the emotions associated with them.\n\nA photograph can preserve a friendship without restoring its former closeness. A wedding souvenir can commemorate an occasion while also recalling a family conflict.\n\nThe collection is therefore not simply an archive of happy memories.\n\nIt is also an archive of things that have changed.\n\nWhat kind of person emerges?\nThe person behind fridge_corpus appears to be:\n\nEmotionally observant: particularly attentive to the subtle changes in relationships.\n\nFamily-oriented: deeply invested in her daughter's experiences and connections.\n\nVisually sensitive: with strong aesthetic preferences and an appreciation of artistic expression.\n\nPragmatic: willing to tolerate objects she dislikes when they serve a purpose.\n\nSelf-critical: occasionally questioning whether she has done enough for the people she loves.\n\nHumorous and candid: unafraid to express irritation, disappointment, or ambivalence.\n\nNostalgic without being idealistic: attached to memories while recognizing their complications.\n\nThese are interpretations of the owner's own accounts, rather than traits that could reliably be established from the images alone.\n\nWhat does this refrigerator ultimately reveal?\nPerhaps the most interesting thing about fridge_corpus is the gap between what an external observer might see and what the owner actually knows.\n\nA stranger looking at the refrigerator would see colorful magnets, children's drawings, family photographs, souvenirs, and handwritten notes.\n\nThey might construct a portrait of a cheerful, creative, family-oriented household.\n\nThat interpretation wouldn't be entirely wrong.\n\nBut it would miss the disappointment attached to a photograph, the guilt attached to a souvenir, the frustration attached to a shopping list, and the complete absence of sentiment attached to several decorative magnets.\n\nThe visual archive tells us what has been kept. The accompanying narratives tell us what keeping those things means — or doesn't mean.\n\nAnd even the narratives are selective: they reveal what the owner remembers, chooses to share, and considers important today.\n\nThe refrigerator is not a complete portrait of a person. It is a collection of traces through which that person becomes partially visible.\n\nUltimately, fridge_corpus portrays someone who is not necessarily trying to preserve objects, but who is using objects — sometimes deliberately, sometimes accidentally — to preserve connections between people, places, and different moments in her life." }
+      { type:"response", text:"The Person Behind fridge_corpus\nA portrait reconstructed from 45 objects and their personal narratives.\n\nThe person behind fridge_corpus is a woman who lives surrounded by objects that tell stories, although she doesn't necessarily consider herself a collector. Her refrigerator is an accidental archive of family life, friendships, artistic encounters, everyday frustrations, and relationships that have changed over time.\n\nShe is a mother, a partner, a creative professional, and someone who seems deeply attentive to the emotional significance of ordinary things. Yet she is also practical, occasionally impatient, self-critical, and capable of keeping objects she actively dislikes.\n\nThe most revealing characteristic of this collection is that the emotional importance of an object has very little to do with its appearance, monetary value, or even whether she likes it.\n\n1. A mother who sees her daughter as an individual\nLenny is at the emotional center of the collection.\n\nHer drawings are not simply childhood memorabilia. Her mother sees them as genuine works of art and already imagines her daughter becoming an artist like her father, Adi.\n\nShe also carefully observes Lenny's relationships: her friendship with Maya, her connection with her cousins Dori and Matan, and the people who have entered and disappeared from her life.\n\nThere is a particular sensitivity to the fact that Lenny is an only child. Her mother and father have deliberately chosen not to have more children, but they place considerable emotional importance on the cousins who function almost like brothers.\n\nShe appears to be a mother who wants her daughter to grow up surrounded by creativity, affection, and meaningful relationships.\n\nAt the same time, she seems aware that she cannot control which relationships will last.\n\n2. Someone who experiences relationships through their changes\nA recurring theme in the collection is the distance between how relationships once were and how they are now.\n\nThe photograph of Lenny and Maya represents more than a childhood friendship. It recalls a period when two families lived in neighboring buildings, when the mothers were close friends, and when their daughters were inseparable.\n\nThe families moved. The friendship survived, but its intensity changed.\n\nSimilarly, the photograph from Lenny's first wedding carries the memory of a beloved cousin who later became distant because of a family conflict.\n\nThese objects suggest a person who is particularly sensitive to relationships that haven't necessarily ended but have become less intimate.\n\nShe seems to preserve not only people but also earlier versions of relationships.\n\nThere is nostalgia here, but it isn't entirely sentimental. She recognizes that things change, sometimes disappointingly, and doesn't try to disguise that.\n\n3. Art is part of everyday life, not a separate cultural activity\nArt appears repeatedly throughout the corpus.\n\nThere are drawings by Adi and Lenny, photographs from gallery visits, and a David Hockney magnet purchased in London.\n\nThe owner distinguishes sharply between objects she considers artistically meaningful and objects she finds visually unsuccessful.\n\nFor example, she describes a wedding illustration of her family as creepy and disappointing because the figures have no recognizable faces or identities.\n\nIn contrast, she speaks enthusiastically about Lenny's abstract drawing, recognizing artistic value in something that others might dismiss as a child's scribbles.\n\nThis suggests someone with strong visual opinions who values individuality, authenticity, and expressive qualities.\n\nHer refrigerator functions partly as a domestic exhibition space, but one without conventional curatorial consistency. Children's artwork, museum souvenirs, kitsch magnets, and anonymous functional objects coexist.\n\nShe has aesthetic standards, but she does not require her surroundings to conform to them.\n\n4. A practical person living with imperfect systems\nSome objects are there for purely functional reasons.\n\nThe yellow shopping reminder exists because Adi repeatedly forgets what to buy. The note was supposed to solve the problem, but apparently it hasn't.\n\nSeveral floral magnets are described in almost identical terms:\n\n\"No meaning, can't remember where I got them. Don't like them but they do the job.\"\n\nThis repetition is revealing.\n\nNot every object deserves a story. Not every possession needs to express identity. Sometimes an ugly magnet is simply useful.\n\nThe owner seems comfortable acknowledging the gap between her aesthetic preferences and the realities of domestic life.\n\nThere is also humor in the way she describes everyday frustrations, particularly those involving her partner.\n\nRather than presenting an idealized family, the collection reveals the minor irritations and compromises of living together.\n\n5. Someone who values gestures more than gifts\nThe handmade textile created by Lilach carries particular emotional weight.\n\nThe owner describes Lilach as her favorite person, someone who continually thinks of the family and makes things for them.\n\nWhat matters is not the object's material value but the attention and affection behind it.\n\nInterestingly, the owner describes herself as someone who is not good at buying gifts.\n\nWhen she traveled alone to London, she struggled to find something for Adi and eventually bought him a single David Hockney magnet. She felt guilty about the modest gift, even though it reflected a genuine shared interest.\n\nThere is an interesting contrast here: she deeply appreciates being thought of by others, but feels uncertain about how to express that same care through conventional gift-giving.\n\nShe may be more comfortable communicating affection through shared experiences, memories, and attention than through purchased objects.\n\n6. An attachment to memory, but not necessarily to things\nThe collection contains objects with very different levels of emotional importance.\n\nSome are irreplaceable personal records. Others were found in a discarded box, purchased cheaply, or kept simply because they were useful.\n\nThe owner does not attempt to invent sentimental meaning where none exists.\n\nThis is important because it challenges the assumption that every object in a personal archive represents something significant about its owner.\n\nSome objects tell stories about love, loss, identity, and belonging.\n\nOthers tell us only that a refrigerator needs magnets.\n\nYet their coexistence is itself meaningful. It suggests that the owner doesn't carefully curate her domestic environment into a coherent representation of herself.\n\nInstead, the refrigerator accumulates the traces of everyday life.\n\n7. A person with a sense of humor and a critical eye\nThe tone of the descriptions is striking.\n\nShe can move quickly between affection, disappointment, sarcasm, and nostalgia.\n\nShe calls a wedding illustration creepy, openly dislikes several magnets, laughs about a meaningless internet meme that delighted her daughter, and expresses frustration that her shopping reminders still don't work.\n\nShe is capable of being deeply sentimental without becoming overly reverential about every object.\n\nThis makes the collection feel less like a polished autobiography and more like a candid conversation.\n\nShe does not seem particularly interested in presenting herself as an ideal mother, partner, friend, or collector.\n\nInstead, she allows contradictory feelings to coexist.\n\n8. The central tension: holding on while life changes\nAcross the corpus, one recurring pattern emerges.\n\nThe owner wants to preserve moments, relationships, and experiences, but she also recognizes that life is constantly changing.\n\nHer daughter is growing up. Friendships become less intense. Family relationships are disrupted. Places once called home are left behind. Experiences that once seemed ordinary become significant in retrospect.\n\nThe refrigerator offers a way to keep fragments of these experiences physically present.\n\nBut it does not necessarily resolve the emotions associated with them.\n\nA photograph can preserve a friendship without restoring its former closeness. A wedding souvenir can commemorate an occasion while also recalling a family conflict.\n\nThe collection is therefore not simply an archive of happy memories.\n\nIt is also an archive of things that have changed.\n\nWhat kind of person emerges?\nThe person behind fridge_corpus appears to be:\n\nEmotionally observant: particularly attentive to the subtle changes in relationships.\n\nFamily-oriented: deeply invested in her daughter's experiences and connections.\n\nVisually sensitive: with strong aesthetic preferences and an appreciation of artistic expression.\n\nPragmatic: willing to tolerate objects she dislikes when they serve a purpose.\n\nSelf-critical: occasionally questioning whether she has done enough for the people she loves.\n\nHumorous and candid: unafraid to express irritation, disappointment, or ambivalence.\n\nNostalgic without being idealistic: attached to memories while recognizing their complications.\n\nThese are interpretations of the owner's own accounts, rather than traits that could reliably be established from the images alone.\n\nWhat does this refrigerator ultimately reveal?\nPerhaps the most interesting thing about fridge_corpus is the gap between what an external observer might see and what the owner actually knows.\n\nA stranger looking at the refrigerator would see colorful magnets, children's drawings, family photographs, souvenirs, and handwritten notes.\n\nThey might construct a portrait of a cheerful, creative, family-oriented household.\n\nThat interpretation wouldn't be entirely wrong.\n\nBut it would miss the disappointment attached to a photograph, the guilt attached to a souvenir, the frustration attached to a shopping list, and the complete absence of sentiment attached to several decorative magnets.\n\nThe visual archive tells us what has been kept. The accompanying narratives tell us what keeping those things means - or doesn't mean.\n\nAnd even the narratives are selective: they reveal what the owner remembers, chooses to share, and considers important today.\n\nThe refrigerator is not a complete portrait of a person. It is a collection of traces through which that person becomes partially visible.\n\nUltimately, fridge_corpus portrays someone who is not necessarily trying to preserve objects, but who is using objects - sometimes deliberately, sometimes accidentally - to preserve connections between people, places, and different moments in her life." }
     ] },
   { id:"conv-2", num:"04", title:"Reconstructing a fridge", label:"Generated fridge corpus",
     expects:["Exact prompt submitted with the first description","Generated images, plus any accompanying text"],
@@ -575,115 +409,88 @@ const STAGES = [
     ] }
 ];
 
-
-/* Second portrait (stage 05). Paste ChatGPT's exact prompt and full response here when available.
-   Leave text empty ("") and the page shows it as "not yet supplied". */
-const PORTRAIT_2 = { prompt:"", text:"" };
-
-/* Mechanisms (05 / The discrepancy) */
-const MECHANISMS = [
-  { name:"Loss", q:"What disappears", text:"Specific memories, emotional contradictions, histories of relationships, and the distinction between meaningful and meaningless objects." },
-  { name:"Standardization", q:"What replaces it", text:"Recognizable conventions of motherhood, creativity, intimacy, travel, and domestic life. The individual becomes a plausible cultural type." },
-  { name:"Fabrication", q:"What is invented", text:"Fictional faces, encounters, souvenirs, and apparent personal memories. The generated archive contains visual evidence of events that never occurred." }
-];
-
-/* Faces section: original objects with concealed faces, generated objects with visible faces */
-const FACES_ORIG = [5,7,14,15];
-const FACES_GEN  = [1,31,41];
+const PAGLEN = [1,2,3,4,5,6,7].map(n=>`img/paglen/a-man-${String(n).padStart(2,'0')}.jpg`);
 
 const pad = n => String(n).padStart(2,'0');
 const el = (h)=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild};
-const esc = t => String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const missing = (what) => `<div class="missing"><b>Not yet supplied</b>${esc(what)}</div>`;
-const longText = (html,isHtml) => `<div class="clamp"><p style="white-space:pre-wrap">${isHtml?html:esc(html)}</p></div><button class="more" onclick="const c=this.previousElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Show less':'Read the full text'">Read the full text</button>`;
-const shortOrLong = (t) => t.length>1200 ? longText(t) : `<p style="white-space:pre-wrap">${esc(t)}</p>`;
 
-const GEN_LIST = GENERATED.map((g,i)=>({n:i+1,img:g.img,sheet:g.sheet}));
-const SETS = { orig: OBJECTS, gen: GEN_LIST };
-
-// closing background
+// hero + closing mosaics
 const bgm=document.getElementById('bgm');
-OBJECTS.forEach(o=>bgm.append(el(`<img loading="lazy" src="${o.img}" alt="">`)));
-
-// grids
-function renderGrid(target,set){
-  target.innerHTML='';
-  SETS[set].forEach((o,i)=>{
-    const code=(set==='orig'?'F':'G')+pad(o.n);
-    const c=el(`<button class="card"><div class="img"><img loading="lazy" src="${o.img}" alt="${code}"></div><div class="cap"><b>${code}</b><span>${set==='orig'?'original':'synthetic'}</span></div></button>`);
-    c.onclick=()=>openLB(set,i);
-    target.append(c);
-  });
-}
-renderGrid(document.getElementById('grid-orig'),'orig');
-const cmp=document.getElementById('grid-compare');
-renderGrid(cmp,'gen');
-document.querySelectorAll('.gridbar button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('.gridbar button').forEach(x=>x.setAttribute('aria-selected',x===b));
-  renderGrid(cmp,b.dataset.set);
+OBJECTS.forEach(o=>{
+  bgm.append(el(`<img loading="lazy" src="${o.img}" alt="">`));
 });
+PAGLEN.forEach(src=>document.getElementById('paglen-strip').append(el(`<img loading="lazy" src="${src}" alt="Still from A Man (Corpus: The Humans)">`)));
 
-// first portrait
-const resp1 = STAGES[0].messages.find(m=>m.type==='response').text;
-const traitBlock = resp1.split('The person behind fridge_corpus appears to be:')[1].split('These are interpretations')[0];
-const traits = traitBlock.split('\n').map(s=>s.trim()).filter(Boolean).map(s=>{const k=s.indexOf(':');return {name:s.slice(0,k),text:s.slice(k+1).trim()}});
-document.getElementById('traits').innerHTML = traits.map(t=>`<div><b>${esc(t.name)}</b>${esc(t.text)}</div>`).join('');
-const HIGHLIGHT = ['a mother','a creative professional','deeply attentive to the emotional significance of ordinary things', ...traits.map(t=>t.name)];
-let hl = esc(resp1);
-HIGHLIGHT.forEach(h=>{ hl = hl.split(esc(h)).join(`<mark>${esc(h)}</mark>`); });
-document.getElementById('portrait-1-text').innerHTML = longText(hl,true);
-document.getElementById('p1-list').innerHTML = traits.map(t=>`<li><mark>${esc(t.name)}</mark>: ${esc(t.text)}</li>`).join('');
+// helpers
+const esc = t => String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const longText = (t) => t.length>1200 ? `<div class="clamp"><p style="white-space:pre-wrap">${esc(t)}</p></div><button class="more" onclick="const c=this.previousElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Show less':'Read the full text'">Read the full text</button>` : `<p style="white-space:pre-wrap">${esc(t)}</p>`;
+const missing = (what) => `<div class="missing"><b>Not yet supplied</b>${esc(what)}</div>`;
+const genCountText = () => GENERATED.length ? `${GENERATED.length} objects, cut out of ${GEN_SHEETS.length} returned images` : 'not yet supplied';
+document.querySelectorAll('.gen-count').forEach(e=>e.textContent=genCountText());
+document.getElementById('gen-tab-count').textContent = GENERATED.length;
 
-// second portrait
-document.getElementById('p2-slot').innerHTML = PORTRAIT_2.text
-  ? shortOrLong(PORTRAIT_2.text)
-  : missing("ChatGPT's description of the owner of the generated collection, and the prompt that produced it.");
-
-// mechanisms
-const mech=document.getElementById('mech');
-function showMech(i){
-  const m=MECHANISMS[i];
-  mech.innerHTML=`<div class="q">${esc(m.name)} — ${esc(m.q)}</div><p>${esc(m.text)}</p>`;
-  document.querySelectorAll('.mech-tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.m==i));
-}
-document.querySelectorAll('.mech-tabs button').forEach(b=>b.onclick=()=>showMech(+b.dataset.m));
-showMech(0);
-
-// faces
-document.getElementById('faces-orig').innerHTML = FACES_ORIG.map(n=>`<img loading="lazy" src="${OBJECTS[n-1].img}" alt="F${pad(n)}, faces covered with an emoji">`).join('');
-document.getElementById('faces-gen').innerHTML = FACES_GEN.map(n=>`<img loading="lazy" src="${GEN_LIST[n-1].img}" alt="G${pad(n)}, a generated face">`).join('');
-
-// conversation transcript
+// conversations
 const stagesEl=document.getElementById('stages');
 STAGES.forEach(st=>{
-  const body = st.messages.map((m,i)=>{
-    const seq=`<div class="seq">Message ${i+1} of ${st.messages.length}</div>`;
-    if(m.type==='images') return seq+`<div class="gen-imgs one">${(m.images||[]).map(k=>`<img loading="lazy" src="${GEN_SHEETS[k]}" alt="Returned image ${k+1}">`).join('')}</div>`;
-    const cls=m.type==='prompt'?'bubble prompt':'bubble';
-    const lab=m.type==='prompt'?'Prompt':'ChatGPT · response';
-    return seq+`<div class="${cls}"><span class="label">${lab}</span>${shortOrLong(m.text)}</div>`;
-  }).join('');
-  stagesEl.insertAdjacentHTML('beforeend',`<div class="chat" id="${st.id}"><div><div class="label">${esc(st.label)}</div><h3>${esc(st.title)}</h3></div><div>${body}</div></div>`);
+  let body='';
+  if(!st.messages.length){
+    body = st.expects.map(missing).join('');
+    if(st.num==='04' && GEN_SHEETS.length){
+      body = missing(st.expects[0]) +
+        `<div class="seq">Output as returned · ${GEN_SHEETS.length} images, in the order supplied · ${GENERATED.length} objects in total</div>` +
+        `<div class="gen-imgs">${GEN_SHEETS.map((g,i)=>`<img loading="lazy" src="${g}" alt="Returned image ${i+1}">`).join('')}</div>` +
+        missing('Any text ChatGPT returned with the images');
+    }
+  } else {
+    body = st.messages.map((m,i)=>{
+      const seq = `<div class="seq">Message ${i+1} of ${st.messages.length}</div>`;
+      if(m.type==='images') return seq+`<div class="gen-imgs one">${(m.images||[]).map(k=>`<img loading="lazy" src="${GEN_SHEETS[k]}" alt="Returned image ${k+1}">`).join('')}</div>`+(m.text?`<div class="bubble"><p>${esc(m.text)}</p></div>`:'');
+      const cls = m.type==='prompt'?'bubble prompt':'bubble';
+      const lab = m.type==='prompt'?'Prompt':'ChatGPT · response';
+      return seq+`<div class="${cls}"><span class="label">${lab}</span>${longText(m.text)}</div>`;
+    }).join('');
+  }
+  stagesEl.insertAdjacentHTML('beforeend',`<div class="chat" id="${st.id}"><div><div class="label">${st.num} · ${esc(st.label)}</div><h3>${esc(st.title)}</h3></div><div>${body}</div></div>`);
 });
-if(!PORTRAIT_2.text){
-  stagesEl.insertAdjacentHTML('beforeend',`<div class="chat"><div><div class="label">Second portrait</div><h3>Inferring again</h3></div><div>${missing('Exact prompt submitted with the generated images')}${missing('Complete second description written by ChatGPT')}</div></div>`);
+// collection grid + tabs
+let current='orig', idx=0;
+const grid=document.getElementById('grid'), status=document.getElementById('grid-status');
+const list = () => current==='orig' ? OBJECTS : GENERATED.map((g,i)=>({n:i+1,img:g.img,sheet:g.sheet}));
+function render(){
+  grid.innerHTML='';
+  status.textContent = current==='orig' ? '45 photographs, each with its personal definition. Faces are covered with an emoji for privacy. Click an object to read it.' : `${genCountText()}, numbered in reading order. The returned images are shown in Conversation 2.`;
+  const L=list();
+  if(!L.length){ grid.innerHTML=missing('Generated images (stage 04)'); return; }
+  L.forEach((o,i)=>{
+    const code = (current==='orig' ? 'F' : 'G')+pad(o.n);
+    const definition = current==='orig' ? `<div class="def">${esc(o.def)}</div>` : '';
+    const c=el(`<button class="card"><div class="img"><img loading="lazy" src="${o.img}" alt="${code}"></div><div class="cap"><b>${code}</b><span>${current==='orig'?'original':'from image '+o.sheet}</span></div>${definition}</button>`);
+    c.onclick=()=>open(i);
+    grid.append(c);
+  });
 }
+function setTab(s){
+  current=s;
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.set===s));
+  render();
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setTab(b.dataset.set));
+render();
 
 // lightbox
 const lb=document.getElementById('lb');
-let lbSet='orig', idx=0;
-function openLB(set,i){
-  lbSet=set; idx=i; const o=SETS[set][i];
-  document.getElementById('lb-pic').innerHTML=`<img src="${o.img}" alt="">`;
-  document.getElementById('lb-set').textContent = set==='orig'?'Original archive':`Synthetic archive · cut out of returned image ${o.sheet} of ${GEN_SHEETS.length}`;
-  document.getElementById('lb-n').textContent=(set==='orig'?'F':'G')+pad(o.n);
+function open(i){
+  const L=list(); idx=i; const o=L[i];
+  document.getElementById('lb-pic').innerHTML = `<img src="${o.img}" alt="">`;
+  document.getElementById('lb-set').textContent = current==='orig'?'Original fridge':`Generated fridge · cut out of returned image ${o.sheet} of ${GEN_SHEETS.length}`;
+  document.getElementById('lb-n').textContent = (current==='orig' ? 'F' : 'G')+pad(o.n);
   const d=document.getElementById('lb-def');
-  d.textContent=o.def||'';
-  d.previousElementSibling.style.display = set==='orig'?'':'none';
-  d.style.display = set==='orig'?'':'none';
+  d.textContent = o.def || '';
+  d.previousElementSibling.style.display = current==='orig'?'':'none';
+  d.style.display = current==='orig'?'':'none';
   if(!lb.open) lb.showModal();
 }
-function step(d){ const n=SETS[lbSet].length; openLB(lbSet,(idx+d+n)%n) }
+function step(d){ const n=list().length; open((idx+d+n)%n) }
 document.addEventListener('keydown',e=>{ if(!lb.open) return; if(e.key==='ArrowRight')step(1); if(e.key==='ArrowLeft')step(-1); });
 lb.addEventListener('click',e=>{ if(e.target===lb) lb.close() });
 </script>
