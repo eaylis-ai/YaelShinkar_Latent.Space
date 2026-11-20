@@ -110,7 +110,9 @@
   .tabs button{font-family:var(--display);font-size:17px;padding:0 0 12px;margin-bottom:-1px;color:var(--muted);border-bottom:2px solid transparent}
   .tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--ink)}
   .tabs .count{font-family:var(--mono);font-size:11px;margin-left:6px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px}
+  .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px}
+  @media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .grid .card{outline:1px solid var(--line)}
   .card{background:var(--tile);text-align:left;display:flex;flex-direction:column}
   .card .img{aspect-ratio:3/4;overflow:hidden}
@@ -417,7 +419,10 @@ const bgm=document.getElementById('bgm');
 OBJECTS.forEach(o=>{
   bgm.append(el(`<img loading="lazy" src="${o.img}" alt="">`));
 });
-PAGLEN.forEach(src=>document.getElementById('paglen-strip').append(el(`<img loading="lazy" src="${src}" alt="Still from A Man (Corpus: The Humans)">`)));
+PAGLEN.forEach(src=>{
+  const paglenStrip=document.getElementById('paglen-strip');
+  if(paglenStrip) paglenStrip.append(el(`<img loading="lazy" src="${src}" alt="Still from A Man (Corpus: The Humans)">`));
+});
 
 // helpers
 const esc = t => String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
