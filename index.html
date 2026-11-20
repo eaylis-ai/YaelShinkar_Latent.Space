@@ -84,7 +84,7 @@
   #overview .label,#overview .attr span{color:rgba(255,255,255,.72)}
 
   /* response */
-  #response .qa{display:block;width:100%;max-width:900px;margin:0 auto;background:transparent;font-family:"Times New Roman",Times,serif;font-size:24px;line-height:1.5}
+  #response .qa{display:block;width:100%;max-width:none;margin:0;background:transparent;font-family:"Times New Roman",Times,serif;font-size:24px;line-height:1.5}
   #response .qa article{background:transparent;color:var(--ink);padding:0}
   #response .qa article+article{margin-top:28px}
   #response .qa p{font-size:24px;line-height:1.5}
@@ -93,11 +93,9 @@
   #response .qa i{font-style:italic}
 
   /* intro + process */
-  .lede{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1.3;letter-spacing:-.01em;max-width:34ch}
+  .lede{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1.3;letter-spacing:-.01em;max-width:none}
   .two{display:grid;grid-template-columns:220px 1fr;gap:24px}
-  .two .body{max-width:62ch}
-  .two .body p+p{margin-top:1em}
-  @media(max-width:800px){.two{grid-template-columns:1fr}}
+  .two .body{max-width:none;width:100%}
   .steps{list-style:none;margin-top:64px;border-top:1px solid var(--line)}
   .steps li{display:grid;grid-template-columns:220px 1fr 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
   .steps .num{font-family:var(--display);font-size:44px;line-height:1;letter-spacing:-.03em}
@@ -127,7 +125,7 @@
   .chat{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:40px 0;border-bottom:1px solid var(--line)}
   .chat:last-child{border-bottom:0}
   .chat h3{font-family:var(--display);font-weight:500;font-size:22px}
-  .bubble{border:1px solid var(--ink);padding:20px 24px;background:var(--tile);max-width:72ch}
+  .bubble{border:1px solid var(--ink);padding:20px 24px;background:var(--tile);max-width:none;width:100%}
   .bubble+.bubble{margin-top:12px}
   .bubble .label{display:block;margin-bottom:10px}
   .bubble.prompt{background:var(--ink);color:var(--bg)}
@@ -144,13 +142,9 @@
   .closing .bgm img{width:100%;height:100%;object-fit:cover}
   .closing .wrap{position:relative;padding-top:clamp(80px,12vw,160px);padding-bottom:clamp(80px,12vw,160px)}
   .closing .label{color:#bbb}
-  .closing p.resp{font-size:clamp(18px,1.6vw,21px);max-width:60ch;margin:22px 0 64px;color:#eee}
-  .closing .q{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.4vw,64px);line-height:1.06;letter-spacing:-.03em;max-width:24ch}
-  .closing .q em{font-style:normal;background:var(--accent);color:#111;padding:0 .12em}
-
-  .missing{border:1px dashed var(--muted);background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(0,0,0,.025) 10px 20px);padding:18px 22px;font-family:var(--mono);font-size:12px;color:var(--muted);max-width:72ch}
-  .missing b{display:block;color:var(--ink);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
-  .missing+.missing,.bubble+.missing,.missing+.bubble{margin-top:12px}
+  .closing p.resp{font-size:clamp(18px,1.6vw,21px);max-width:none;width:100%;margin:22px 0 64px;color:#eee}
+  .closing .q{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.4vw,64px);line-height:1.06;letter-spacing:-.03em;max-width:none;width:100%}
+  .missing{border:1px dashed var(--muted);background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(0,0,0,.025) 10px 20px);padding:18px 22px;font-family:var(--mono);font-size:12px;color:var(--muted);max-width:none;width:100%}
   .clamp{position:relative;max-height:380px;overflow:hidden}
   .clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(255,255,255,0),var(--tile))}
   .clamp.open{max-height:none}.clamp.open::after{display:none}
@@ -158,7 +152,7 @@
   .seq{font-family:var(--mono);font-size:11px;color:var(--muted);margin:22px 0 8px}
   .seq:first-child{margin-top:0}
   .gen-imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-top:12px}
-  .gen-imgs.one{grid-template-columns:1fr;max-width:72ch}
+  .gen-imgs.one{grid-template-columns:1fr;max-width:none;width:100%}
   .gen-imgs img{width:100%;border:1px solid var(--line);background:#fff}
   .status{font-family:var(--mono);font-size:12px;color:var(--muted);margin:-12px 0 24px}
   .grid.wide{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
