@@ -84,13 +84,13 @@
   #overview .label,#overview .attr span{color:rgba(255,255,255,.72)}
 
   /* response */
-  .qa{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:transparent;border:0}
-  .qa article{background:#fff;color:rgba(17,17,17,.9);padding:28px}
-  .qa .n{font-family:var(--mono);font-size:12px;color:rgba(17,17,17,.75)}
-  .qa h3{font-family:var(--display);font-weight:500;font-size:21px;line-height:1.2;letter-spacing:-.01em;margin:10px 0 16px}
-  .qa p{font-size:16px}
-  .qa .answer{display:inline-block;background:var(--accent);padding:0 6px;font-family:var(--display);font-weight:500}
-  @media(max-width:900px){.qa{grid-template-columns:1fr}}
+  #response .qa{display:block;width:100%;max-width:900px;margin:0 auto;background:transparent;font-family:"Times New Roman",Times,serif;font-size:24px;line-height:1.5}
+  #response .qa article{background:transparent;color:var(--ink);padding:0}
+  #response .qa article+article{margin-top:28px}
+  #response .qa p{font-size:24px;line-height:1.5}
+  #response .qa article:first-child p{margin:0}
+  #response .qa b{font-weight:700}
+  #response .qa i{font-style:italic}
 
   /* intro + process */
   .lede{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1.3;letter-spacing:-.01em;max-width:34ch}
@@ -228,20 +228,13 @@
     <div class="sec-head"><div class="label">Part A · Response</div><div></div></div>
     <div class="qa">
       <article>
-        <div class="n">01</div>
-        <h3>Which archive or dataset does the work use, and what is missing?</h3>
         <p>Trevor Paglen's <i>Adversarially Evolved Hallucinations</i> (2017) uses generative adversarial networks (GANs) trained on deliberately assembled image datasets, including collections organized around politically and culturally charged categories such as <i>Monsters of Capitalism</i>. These datasets are not neutral representations of reality; their selection and classification already encode particular interpretations of the world. What is missing is the historical, social, and personal context that cannot be fully represented through images and their categories.</p>
       </article>
       <article>
-        <div class="n">02</div>
-        <h3>What does the latent space reveal, and what does it conceal?</h3>
         <p>The latent space reveals how a machine can transform these classifications into new visual possibilities, producing images that reflect the patterns and associations embedded in its training data. At the same time, it conceals the decisions, exclusions, and ideological assumptions that structure those possibilities.</p>
       </article>
       <article>
-        <div class="n">03</div>
-        <h3>Which strategy does the work employ? <span class="answer">Glitch</span></h3>
-        <p>Paglen's strategy is primarily one of <b>glitch and critical exposure</b>. By generating strange, unsettling images, he makes visible the artificial logic of machine vision rather than presenting it as an objective representation of reality.</p>
-        <p style="margin-top:1em;font-weight:700">The work raises a fundamental question: when an AI system generates an image, whose understanding of the world is being reproduced?</p>
+        <p>Paglen's strategy is primarily one of <b>glitch and critical exposure</b>. By generating strange, unsettling images, he makes visible the artificial logic of machine vision rather than presenting it as an objective representation of reality. An AI-generated image raises a fundamental issue: an understanding of the world may be reproduced through the system that creates it.</p>
       </article>
     </div>
   </div>
