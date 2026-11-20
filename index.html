@@ -56,7 +56,7 @@
   .opening>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .opening::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 20%,rgba(0,0,0,.12) 45%,rgba(0,0,0,.82) 100%)}
   .opening-copy{position:absolute;z-index:2;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);bottom:clamp(28px,6vh,72px)}
-  .opening-label{position:absolute;z-index:10;top:52%;left:12px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;text-orientation:mixed;background:#fff;color:#111;font-family:var(--mono);font-size:12px;line-height:1.2;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 6px}
+  .opening-label{position:absolute;z-index:10;top:70px;left:12px;transform:none;writing-mode:horizontal-tb;text-orientation:mixed;background:#fff;color:#111;font-family:var(--mono);font-size:12px;line-height:1.2;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:5px 8px}
   .opening-copy .label{color:#111;background:#f0a5b6;padding:5px 8px;width:max-content;margin-bottom:clamp(18px,3vh,32px)}
   .opening-copy h1{font-family:var(--display);font-weight:500;font-size:clamp(54px,9vw,124px);line-height:.88;letter-spacing:-.045em}
   .opening-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.5vw,48px);line-height:1.04;letter-spacing:-.025em;margin-top:16px}
@@ -80,8 +80,7 @@
   .caption{font-family:var(--mono);font-size:12px;color:var(--muted);padding:12px 0}
 
   /* overview */
-  .quote{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.2vw,60px);line-height:1.08;letter-spacing:-.025em;max-width:22ch}
-  .quote::before{content:"“"} .quote::after{content:"”"}
+  .quote{font-family:"Times New Roman",Times,serif;font-weight:400;font-style:italic;font-size:clamp(30px,4.2vw,60px);line-height:1.08;letter-spacing:-.02em;width:100%;max-width:none;margin:0}
   .attr{margin-top:28px;font-family:var(--mono);font-size:13px}
   .attr span{color:var(--muted)}
   @media(max-width:900px){.original{grid-template-columns:1fr}}
