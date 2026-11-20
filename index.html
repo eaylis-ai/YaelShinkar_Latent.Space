@@ -120,6 +120,7 @@
   .card:hover .img img{transform:scale(1.05)}
   .card .cap{font-family:var(--mono);font-size:11px;padding:8px 10px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted)}
   .card .cap b{color:var(--ink);font-weight:500}
+  .card .def{font-family:"Times New Roman",Times,serif;font-size:13px;font-style:italic;line-height:1.35;padding:8px 10px;border-top:1px solid var(--line);color:var(--ink)}
   .card .ph{aspect-ratio:3/4}
 
   /* transcripts */
@@ -462,7 +463,8 @@ function render(){
   if(!L.length){ grid.innerHTML=missing('Generated images (stage 04)'); return; }
   L.forEach((o,i)=>{
     const code = (current==='orig' ? 'F' : 'G')+pad(o.n);
-    const c=el(`<button class="card"><div class="img"><img loading="lazy" src="${o.img}" alt="${code}"></div><div class="cap"><b>${code}</b><span>${current==='orig'?'original':'from image '+o.sheet}</span></div></button>`);
+    const definition = current==='orig' ? `<div class="def">${esc(o.def)}</div>` : '';
+    const c=el(`<button class="card"><div class="img"><img loading="lazy" src="${o.img}" alt="${code}"></div><div class="cap"><b>${code}</b><span>${current==='orig'?'original':'from image '+o.sheet}</span></div>${definition}</button>`);
     c.onclick=()=>open(i);
     grid.append(c);
   });
