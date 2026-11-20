@@ -313,9 +313,19 @@
   #portrait-1-text .clamp::after{background:linear-gradient(rgba(244,243,239,0),var(--bg))}
   .prompt-line{font-family:"Times New Roman",Times,serif;font-size:24px;line-height:1.5;font-style:italic;font-weight:700}
   .prompt-line+.prompt-line{margin-top:12px}
+  .dims{width:100%;border-collapse:collapse;margin:48px 0}
+  .dims th,.dims td{text-align:left;vertical-align:top;padding:10px 24px 10px 0;font-family:"Times New Roman",Times,serif;font-size:24px;line-height:1.4;font-weight:400}
+  .dims thead th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:16px}
+  .dims tbody th{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;width:18%;padding-top:16px}
+  .dims tbody td:last-child{background:#f0a5b6;padding-left:16px}
+  @media(max-width:800px){.dims th,.dims td{font-size:18px}}
   .final h2{font-family:"Times New Roman",Times,serif;font-style:italic;font-weight:400;font-size:clamp(44px,6.5vw,88px);line-height:.98;letter-spacing:-.01em;margin:16px 0 32px}
   .final .serif{color:#eee;max-width:42ch}
   .final .last{font-style:italic;font-size:clamp(26px,3vw,38px);line-height:1.25;margin-top:1.2em;color:#fff}
+  /* HEADINGS + QUOTES: one style */
+  .titleblock h2,.chap h2,.final h2,.quote,.bigline,.closing .q{font-family:"Times New Roman",Times,serif !important;font-style:italic !important;font-weight:700 !important;font-size:clamp(36px,5.6vw,60pt) !important;line-height:1.05 !important;letter-spacing:-.01em !important}
+  .bigline,.closing .q{max-width:none !important}
+  .closing .q em{font-style:italic}
 </style>
 
 <!-- PART B -->
@@ -363,15 +373,30 @@
   </div>
 </section>
 
-<!-- 04 SECOND PORTRAIT -->
+<!-- 03 WHAT THE EXPERIMENT REVEALS -->
 <section id="portrait-2" class="chap">
   <div class="wrap">
-    <div class="chap-tag">03 / The second portrait</div>
-    <h2>Two portraits, side by side</h2>
-    <p class="intro">The identity reconstructed from the synthetic archive, displayed alongside the first portrait.</p>
-    <div class="portraits">
-      <div><h3>First portrait · from the lived archive</h3><ul id="p1-list"></ul></div>
-      <div><h3>Second portrait · from the synthetic archive</h3><div id="p2-slot"></div></div>
+    <div class="chap-tag">03 / What the experiment reveals</div>
+    <h2>What the experiment reveals</h2>
+    <div class="serif">
+      <p>The two portraits are not completely different. In fact, the second reconstruction preserves much of the first portrait's biographical structure. This is precisely what makes the experiment interesting.</p>
+    </div>
+    <table class="dims">
+      <thead><tr><th>Dimension</th><th>Original archive</th><th>Synthetic archive</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Identity</th><td>Inferred from specific personal accounts</td><td>Reconstructed from generalized traits</td></tr>
+        <tr><th scope="row">Relationships</th><td>Named people, histories, distance and conflict</td><td>Affectionate family imagery</td></tr>
+        <tr><th scope="row">Memory</th><td>Contradictory, sometimes painful</td><td>Predominantly nostalgic</td></tr>
+        <tr><th scope="row">Aesthetics</th><td>Inconsistent, accidental, sometimes disliked</td><td>Visually coherent and appealing</td></tr>
+        <tr><th scope="row">Objects</th><td>Some deeply meaningful, some meaningless</td><td>Most appear intentionally selected</td></tr>
+        <tr><th scope="row">Faces</th><td>Deliberately concealed</td><td>Fictional faces introduced</td></tr>
+        <tr><th scope="row">Authenticity</th><td>Objects tied to actual experiences</td><td>Objects representing plausible experiences</td></tr>
+      </tbody>
+    </table>
+    <div class="serif">
+      <p>The strongest finding is not simply that the model produces clichés. It is that the model converts relationships into representations of relationships.</p>
+      <p>For example, a photograph of two children whose friendship has changed becomes the generalized visual language of childhood friendship. The social history disappears, while the image remains emotionally legible.</p>
+      <p>The model can represent nostalgia without knowing what is missed. It can generate a family photograph without a family. It can produce a souvenir without a journey.</p>
     </div>
   </div>
 </section>
@@ -603,12 +628,6 @@ let hl = esc(resp1.replace(/\n{2,}/g,'\n'));
 HIGHLIGHT.forEach(h=>{ hl = hl.split(esc(h)).join(`<mark>${esc(h)}</mark>`); });
 document.getElementById('portrait-1-text').innerHTML = longText(hl,true);
 document.getElementById('portrait-1-text').classList.add('person-text');
-document.getElementById('p1-list').innerHTML = traits.map(t=>`<li><mark>${esc(t.name)}</mark>: ${esc(t.text)}</li>`).join('');
-
-// second portrait
-document.getElementById('p2-slot').innerHTML = PORTRAIT_2.text
-  ? shortOrLong(PORTRAIT_2.text)
-  : missing("ChatGPT's description of the owner of the generated collection, and the prompt that produced it.");
 
 // mechanisms
 const mech=document.getElementById('mech');
