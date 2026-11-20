@@ -51,6 +51,18 @@
   .title .meta div{font-family:var(--mono);font-size:13px}
   .title .meta span{display:block;color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 
+  /* full-screen opening */
+  .opening{position:relative;width:100%;height:calc(100svh - 52px);min-height:620px;overflow:hidden;background:#111;color:#fff}
+  .opening>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .opening::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 20%,rgba(0,0,0,.12) 45%,rgba(0,0,0,.82) 100%)}
+  .opening-copy{position:absolute;z-index:2;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);bottom:clamp(28px,6vh,72px)}
+  .opening-copy .label{color:rgba(255,255,255,.76);margin-bottom:clamp(18px,3vh,32px)}
+  .opening-copy h1{font-family:var(--display);font-weight:500;font-size:clamp(54px,9vw,124px);line-height:.88;letter-spacing:-.045em}
+  .opening-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.5vw,48px);line-height:1.04;letter-spacing:-.025em;margin-top:16px}
+  .opening-meta{display:flex;flex-wrap:wrap;gap:8px 34px;margin-top:clamp(22px,4vh,40px);font-family:var(--mono);font-size:12px}
+  .opening-meta span{display:block;color:rgba(255,255,255,.62);font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+  @media(max-width:700px){.opening{height:calc(100svh - 52px);min-height:560px}.opening>img{object-position:center}.opening-copy h1{font-size:clamp(48px,16vw,72px)}.opening-meta{gap:12px 22px}}
+
   /* hero: two fridges */
   .fridges{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border-bottom:1px solid var(--ink)}
   .fridges figure{background:var(--bg);position:relative}
@@ -195,29 +207,19 @@
   </div>
 </header>
 
-<div class="wrap title">
-  <div class="label">Latent Spaces · Assignment 2 · M.Des, HIT · 2026</div>
-  <h1>Yael Shinkar</h1>
-  <h2>A Woman (Corpus: The Fridge)</h2>
-  <div class="meta">
-    <div><span>In response to</span>Trevor Paglen, <i>Adversarially Evolved Hallucinations</i>, 2017</div>
-    <div><span>Objects</span>45</div>
-    <div><span>Tool</span>ChatGPT</div>
+<section class="opening" aria-label="Trevor Paglen, Adversarially Evolved Hallucinations">
+  <img src="img/paglen/corpus.jpg" alt="Training corpus for Trevor Paglen's Adversarially Evolved Hallucinations, a grid of dentures and related dental images">
+  <div class="opening-copy">
+    <div class="label">Latent Spaces · Assignment 2 · M.Des, HIT · 2026</div>
+    <h1>Yael Shinkar</h1>
+    <h2>A Woman (Corpus: The Fridge)</h2>
+    <div class="opening-meta">
+      <div><span>In response to</span>Trevor Paglen, <i>Adversarially Evolved Hallucinations</i>, 2017</div>
+      <div><span>Objects</span>45</div>
+      <div><span>Tool</span>ChatGPT</div>
+    </div>
   </div>
-</div>
-
-<div class="hero">
-  <div class="fridges">
-    <figure>
-      <img src="hero/fridge-original.jpg" alt="Photograph of the fridge door with the 45 original objects">
-      <figcaption><b>F</b> Original fridge · photograph</figcaption>
-    </figure>
-    <figure>
-      <img src="hero/fridge-generated.jpg" alt="The same photograph with the 45 generated objects placed on the fridge">
-      <figcaption><b>G</b> Generated fridge · the 45 ChatGPT-generated objects placed onto the same photograph (digital composite)</figcaption>
-    </figure>
-  </div>
-</div>
+</section>
 
 <!-- OVERVIEW: quote + original work -->
 <section id="overview">
