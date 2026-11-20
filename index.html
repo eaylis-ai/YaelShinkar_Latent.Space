@@ -84,7 +84,6 @@
   .quote::before{content:"“"} .quote::after{content:"”"}
   .attr{margin-top:28px;font-family:var(--mono);font-size:13px}
   .attr span{color:var(--muted)}
-  .original{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:clamp(56px,8vw,96px);align-items:start}
   @media(max-width:900px){.original{grid-template-columns:1fr}}
   .original figure img{width:100%;border:1px solid var(--ink)}
   .original h3{font-family:var(--display);font-weight:500;font-size:28px;line-height:1.1;letter-spacing:-.015em;margin:10px 0 14px}
@@ -227,20 +226,6 @@
     <div class="sec-head"><div class="label">Overview</div><div></div></div>
     <p class="quote">latent spaces are not meant for preservation and retrieval as traditional archives but rather for transformation.</p>
     <p class="attr">Antonio Somaini, <i>Latent Spaces: AI, Art, and the Archive</i>, <span>October 196 (2026), p. 36</span></p>
-
-    <div class="original">
-      <figure>
-        <img src="img/paglen/corpus.jpg" alt="A grid of hundreds of training images, part of a corpus Trevor Paglen built for Adversarially Evolved Hallucinations">
-        <figcaption class="caption">Training corpus image from <i>Adversarially Evolved Hallucinations</i>.</figcaption>
-      </figure>
-      <div>
-        <div class="label">The original work</div>
-        <h3>Trevor Paglen<br><i>Adversarially Evolved Hallucinations</i>, 2017</h3>
-        <p>Paglen trained image models on corpora he assembled himself, organized around culturally loaded categories such as monsters, dreams and omens, then let a second network evolve images the first would recognize. Below: <i>A Man (Corpus: The Humans)</i>.</p>
-        <div class="strip" id="paglen-strip"></div>
-        <a class="btn" href="https://doi.org/10.1162/OCTO.a.545" target="_blank" rel="noopener">Read Somaini’s article →</a>
-      </div>
-    </div>
   </div>
 </section>
 
